@@ -2,274 +2,371 @@ class FormBuilder {
     constructor() {
       this.formFields = [];
     }
-    addTextField(name, label, placeholder = '') {
+    addTextField(name, label, placeholder = '', required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
       this.formFields.push({
         type: 'text',
-        name,
-        label,
+        name: `${name}${i + 1}`,
+        label: `${label} ${i + 1}`,
         placeholder,
+        required,
       });
+
+    }
       return this; // Return the builder instance for method chaining
     }
-    addNumberField(name, label, placeholder = '') {
+
+    addMultiTextField(name, label = [], placeholder = '', required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+      this.formFields.push({
+        type: 'text',
+        name: `${name}${i + 1}`,
+        label: `${label[i]} ${i + 1}`,
+        placeholder,
+        required,
+      });
+
+    }
+      return this; // Return the builder instance for method chaining
+    }
+
+    addNumberField(name, label, placeholder = '', required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
       this.formFields.push({
         type: 'number',
-        name,
-        label,
+        name: `${name}${i + 1}`,
+        label: `${label} ${i + 1}`,
         placeholder,
+        required,
       });
+    }
       return this; // Return the builder instance for method chaining
 
     }
-    addSelectField(numeric, label, options = []) {
-      // Add a select field
-      this.formFields.push({
-        type: 'select',
-        numeric,
-        label,
-        options,
-      });
+    addSelectField(numeric, label, options = [], required = false, count = 1) {
+
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'select',
+          numeric,
+          label: `${label} ${i + 1}`,
+          options,
+          required,
+        });
+      }
+
       return this; // Return the builder instance for method chaining
     }
 
-    addCheckboxField(name, label, options = []) {
-      // Add a checkbox field
-      this.formFields.push({
-        type: 'checkbox',
-        name,
-        label,
-        options,
-      });
+    addCheckboxField(name, label, options = [], required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'checkbox',
+          name: `${name}${i + 1}`,
+          label: `${label} ${i + 1}`,
+          options,
+          required,
+        });
+      }
       return this; // Return the builder instance for method chaining
     }
 
-    addRadioField(name, label, options = []) {
-      // Add a radio field
-      this.formFields.push({
-        type: 'radio',
-        name,
-        label,
-        options,
-      });
+    addRadioField(name, label, options = [], required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'radio',
+          name: `${name}${i + 1}`,
+          label: `${label} ${i + 1}`,
+          options,
+          required,
+        });
+      }
       return this; // Return the builder instance for method chaining
     }
 
-    addDateField(name, label, placeholder = '') {
-      this.formFields.push({
-        type: 'date',
-        name,
-        label,
-        placeholder,
-      });
+    addDateField(name, label, placeholder = '', required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'date',
+          name: `${name}${i + 1}`,
+          label: `${label} ${i + 1}`,
+          placeholder,
+          required,
+        });
+      }
       return this; // Return the builder instance for method chaining
     }
 
-    addTimeField(name, label, placeholder = '') {
-      this.formFields.push({
-        type: 'time',
-        name,
-        label,
-        placeholder,
-      });
+    addTimeField(name, label, placeholder = '', required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'time',
+          name: `${name}${i + 1}`,
+          label: `${label} ${i + 1}`,
+          placeholder,
+          required,
+        });
+      }
       return this; // Return the builder instance for method chaining
     }
 
-    addTextAreaField(name, label, placeholder = '') {
-      this.formFields.push({
-        type: 'textarea',
-        name,
-        label,
-        placeholder,
-      });
+    addTextAreaField(name, label, placeholder = '', required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'textarea',
+          name: `${name}${i + 1}`,
+          label: `${label} ${i + 1}`,
+          placeholder,
+          required,
+        });
+      }
       return this; // Return the builder instance for method chaining
     }
 
-    addFileField(name, label, placeholder = '') {
-      this.formFields.push({
-        type: 'file',
-        name,
-        label,
-        placeholder,
-      });
+    addFileField(name, label, placeholder = '', required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'file',
+          name: `${name}${i + 1}`,
+          label: `${label} ${i + 1}`,
+          placeholder,
+          required,
+        });
+      }
       return this; // Return the builder instance for method chaining
     }
 
-    addHiddenField(name, label, placeholder = '') {
-      this.formFields.push({
-        type: 'hidden',
-        name,
-        label,
-        placeholder,
-      });
+    addHiddenField(name, label, placeholder = '', required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'hidden',
+          name: `${name}${i + 1}`,
+          label: `${label} ${i + 1}`,
+          placeholder,
+          required,
+        });
+      }
       return this; // Return the builder instance for method chaining
     }
 
-    addSubmitField(name, label, placeholder = '') {
-      this.formFields.push({
-        type: 'submit',
-        name,
-        label,
-        placeholder,
-      });
+    addSubmitField(name, label, placeholder = '', required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'submit',
+          name: `${name}${i + 1}`,
+          label: `${label} ${i + 1}`,
+          placeholder,
+          required,
+        });
+      }
       return this; // Return the builder instance for method chaining
     }
 
-    addResetField(name, label, placeholder = '') {
-      this.formFields.push({
-        type: 'reset',
-        name,
-        label,
-        placeholder,
-      });
+    addResetField(name, label, placeholder = '', required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'reset',
+          name: `${name}${i + 1}`,
+          label: `${label} ${i + 1}`,
+          placeholder,
+          required,
+        });
+      }
       return this; // Return the builder instance for method chaining
     }
 
-    addEmailField(name, label, placeholder = '') {
-      this.formFields.push({
-        type: 'email',
-        name,
-        label,
-        placeholder,
-      });
+    addEmailField(name, label, placeholder = '', required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'email',
+          name: `${name}${i + 1}`,
+          label: `${label} ${i + 1}`,
+          placeholder,
+          required,
+        });
+      }
       return this; // Return the builder instance for method chaining
     }
 
-    addPasswordField(name, label, placeholder = '') {
-      this.formFields.push({
-        type: 'password',
-        name,
-        label,
-        placeholder,
-      });
+    addPasswordField(name, label, placeholder = '', required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'password',
+          name: `${name}${i + 1}`,
+          label: `${label} ${i + 1}`,
+          placeholder,
+          required,
+        });
+      }
       return this; // Return the builder instance for method chaining
     }
 
-    addButtonField(name, label, placeholder = '') {
-      this.formFields.push({
-        type: 'button',
-        name,
-        label,
-        placeholder,
-      });
+    addButtonField(name, label, placeholder = '', required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'button',
+          name: `${name}${i + 1}`,
+          label: `${label} ${i + 1}`,
+          placeholder,
+          required,
+        });
+      }
       return this; // Return the builder instance for method chaining
     }
 
-    addImageField(name, label, placeholder = '') {
-      this.formFields.push({
-        type: 'image',
-        name,
-        label,
-        placeholder,
-      });
+    addImageField(name, label, placeholder = '', required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'image',
+          name: `${name}${i + 1}`,
+          label: `${label} ${i + 1}`,
+          placeholder,
+          required,
+        });
+      }
       return this; // Return the builder instance for method chaining
     }
 
-    addColorField(name, label, placeholder = '') {
-      this.formFields.push({
-        type: 'color',
-        name,
-        label,
-        placeholder,
-      });
+    addColorField(name, label, placeholder = '', required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'color',
+          name: `${name}${i + 1}`,
+          label: `${label} ${i + 1}`,
+          placeholder,
+          required,
+        })
+      }
       return this; // Return the builder instance for method chaining
     }
 
-    addRangeField(name, label, placeholder = '') {
-      this.formFields.push({
-        type: 'range',
-        name,
-        label,
-        placeholder,
-      });
+    addRangeField(name, label, placeholder = '', required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'range',
+          name: `${name}${i + 1}`,
+          label: `${label} ${i + 1}`,
+          placeholder,
+          required,
+        });
+      }
       return this; // Return the builder instance for method chaining
     }
 
-    addSelectMultipleField(name, label, options = []) {
-      this.formFields.push({
-        type: 'select-multiple',
-        name,
-        label,
-        options,
-      });
+    addSelectMultipleField(name, label, options = [], required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'select-multiple',
+          name: `${name}${i + 1}`,
+          label: `${label} ${i + 1}`,
+          options,
+          required,
+        });
+      }
       return this; // Return the builder instance for method chaining
     }
 
-    addCheckboxMultipleField(name, label, options = []) {
-      this.formFields.push({
-        type: 'checkbox-multiple',
-        name,
-        label,
-        options,
-      });
+    addCheckboxMultipleField(name, label, options = [], required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'checkbox-multiple',
+          name: `${name}${i + 1}`,
+          label: `${label} ${i + 1}`,
+          options,
+          required,
+        });
+      }
       return this; // Return the builder instance for method chaining
     }
 
-    addRadioMultipleField(name, label, options = []) {
-      this.formFields.push({
-        type: 'radio-multiple',
-        name,
-        label,
-        options,
-      });
+    addRadioMultipleField(name, label, options = [], required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'radio-multiple',
+          name: `${name}${i + 1}`,
+          label: `${label} ${i + 1}`,
+          options,
+          required,
+        });
+      }
       return this; // Return the builder instance for method chaining
     }
 
-    addSelectField(numeric, label, options = []) {
-      this.formFields.push({
-        type: 'select',
-        numeric,
-        label,
-        options,
-      });
+    addSelectField(numeric, label, options = [], required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'select',
+          numeric,
+          label: `${label} ${i + 1}`,
+          options,
+          required,
+        });
+      }
       return this; // Return the builder instance for method chaining
     }
 
-    addSearchField(name, label, placeholder = '') {
-      this.formFields.push({
-        type: 'search',
-        name,
-        label,
-        placeholder,
-      });
+    addSearchField(name, label, placeholder = '', required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'search',
+          name: `${name}${i + 1}`,
+          label: `${label} ${i + 1}`,
+          placeholder,
+          required,
+        });
+      }
       return this; // Return the builder instance for method chaining
     }
 
-    addHiddenField(name, label, placeholder = '') {
-      this.formFields.push({
-        type: 'hidden',
-        name,
-        label,
-        placeholder,
-      });
+    addHiddenField(name, label, placeholder = '', required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'hidden',
+          name: `${name}${i + 1}`,
+          label: `${label} ${i + 1}`,
+          placeholder,
+          required,
+        });
+      }
       return this; // Return the builder instance for method chaining
     }
 
-    addDateField(name, label, placeholder = '') {
-      this.formFields.push({
-        type: 'date',
-        name,
-        label,
-        placeholder,
-      });
+    addDateField(name, label, placeholder = '', required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'date',
+          name: `${name}${i + 1}`,
+          label: `${label} ${i + 1}`,
+          placeholder,
+          required,
+        })
+      }
       return this; // Return the builder instance for method chaining
     }
 
-    addImageField(name, label, placeholder = '') {
-      this.formFields.push({
-        type: 'image',
-        name,
-        label,
-        placeholder,
-      })
+    addImageField(name, label, placeholder = '', required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'image',
+          name: `${name}${i + 1}`,
+          label: `${label} ${i + 1}`,
+          placeholder,
+          required,
+        })
+        return this; // Return the builder instance for method chaining
+      }
     }
 
-    addResetField(name, label, placeholder = '') {
-      this.formFields.push({
-        type: 'reset',
-        name,
-        label,
-        placeholder,
-      });
+    addResetField(name, label, placeholder = '', required = false, count = 1) {
+      for (let i = 0; i < count; i++) {
+        this.formFields.push({
+          type: 'reset',
+          name: `${name}${i + 1}`,
+          label: `${label} ${i + 1}`,
+          placeholder,
+          required,
+        })
+      }
       return this; // Return the builder instance for method chaining
     }
 

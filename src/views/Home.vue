@@ -9,7 +9,7 @@ const formData = ref({});
 
 onMounted(() => {
      formFields.value = new FormBuilder()
-     .addTextField('Name')
+     .addTextField('name', 'Name', 'Name',false, 10)
      .addNumberField('Age')
      .addRadioMultipleField('Gender', 'genders', ['male', 'female'])
         .build();

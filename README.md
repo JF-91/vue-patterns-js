@@ -1,7 +1,34 @@
-# Vue 3 + Vite
-
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+    <FormKit v-for="(item, index) in items"
+    :key="index"
+    :type="item.type"
+    :name="item.name"
+    :label="item.label"
+    :options="item.options"
+    :value="item.value"
+    :validation="item.validation"
+    :validation-messages="item.validationMessages"
+    :input-class="item.inputClass"
+    :label-class="item.labelClass"
+    :description="item.description"
+    :description-class="item.descriptionClass"
+    :message="item.message"
+    :message-class="item.messageClass"
+    :prefix="item.prefix"
+    :suffix="item.suffix"
+    :prefix-class="item.prefixClass"
+    :suffix-class="item.suffixClass"
+    :input-props="item.inputProps"
+    :label-props="item.labelProps"
+    :description-props="item.descriptionProps"
+    :message-props="item.messageProps"
+    :prefix-props="item.prefixProps"
+    :suffix-props="item.suffixProps"
+    :validation-props="item.validationProps"
+    :validation-messages-props="item.validationMessagesProps"
+    :input-class-props="item.inputClassProps"
+    :label-class-props="item.labelClassProps"
+    :description-class-props="item.descriptionClassProps"
+    :message-class-props="item.messageClassProps"
+    :prefix-class-props="item.prefixClassProps"
+    :suffix-class-props="item.suffixClassProps"
+    />
